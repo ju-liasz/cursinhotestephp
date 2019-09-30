@@ -1,5 +1,5 @@
 <?php 
-        $nomeSistema = "Cursinhos";
+        $nomeSistema = "Lia de Oliveira";
         ?>
 
 
@@ -13,18 +13,58 @@
     <title>Lojinha</title>
 </head>
 <body>
-    <header class = "d-flex justify-content-between align-items-center p-3">
+    <header class = "navbar">
         <h1 id = "logo">
          <?php echo $nomeSistema; ?>
         </h1>
         <nav> 
         <ul class = "nav">
-        <li class="nav-item"> Cursos </li>
-        <li class="nav-item"> Login </li>
-        <li class="nav-item"> Cadastrar </li>
+            <li class="nav-item">
+                <a class = "nav-link" href=#> Cursos </a>
+            </li>
+            <li class="nav-item"> 
+                <a class = "nav-link" href=#> Login </a>
+            </li>
+            <li class="nav-item"> 
+                <a class = "nav-link" href=#> Cadastrar </a>
+            </li>
         </ul>
         </nav>
  </header>
+ <main>
+ <section class= "container">
+    <div class= "row justify-content-around">
+        <div class = "col-lg-3 card text-center">
+        <h2 class = "h5" >Livro "Dusk Till Dawn" </h2>
+         <img src = "dtd.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                 <h5 class="card-title">R$15,00</h5>
+                          <a href="#" class="btn btn-primary">BUY</a>
+            </div>
+        </div>
+
+     <div class = "col-lg-3 card text-center">
+        <h2 class = "h5" >Livro "Dusk Till Dawn" </h2>
+         <img src = "dtd.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                 <h5 class="card-title">R$15,00</h5>
+                          <a href="#" class="btn btn-primary">BUY</a>
+            </div>
+        </div>
+
+
+         <div class = "col-lg-3 card text-center">
+        <h2 class = "h5" >Livro "Dusk Till Dawn" </h2>
+         <img src = "dtd.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                 <h5 class="card-title">R$15,00</h5>
+                          <a href="#" class="btn btn-primary">BUY</a>
+            </div>
+        </div>
+
+
+    </div>
+ </section>
 
 </body>
 </html>"
