@@ -1,5 +1,6 @@
 <?php 
         $nomeSistema = "Lia de Oliveira";
+        // $usuario = ["nome" => "Julia"]
         ?>
 
 
@@ -19,15 +20,24 @@
         </h1>
         <nav> 
         <ul class = "nav">
-            <li class="nav-item">
-                <a class = "nav-link" href=#> Cursos </a>
+            <?php if(isset($usuario) && $usuario != ""){ ?>
+                <li class="nav-item">
+            <a href="" class="link-nav">Cursos</a>
             </li>
+            <li class="nav-item">
+            <a href="" class="link-nav">Olá Usuario</a>
+            </li>
+            <?php } else { ?>
+
+
             <li class="nav-item"> 
                 <a class = "nav-link" href=#> Login </a>
             </li>
             <li class="nav-item"> 
                 <a class = "nav-link" href=#> Cadastrar </a>
             </li>
+                <?php } ?>
+
         </ul>
         </nav>
  </header>
