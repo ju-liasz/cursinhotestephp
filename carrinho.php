@@ -1,6 +1,6 @@
 <?php 
         $nomeSistema = "Lia de Oliveira";
-        //$usuario = ["nome" => "Julia"];
+        $usuario = ["nome" => "Julia"];
 
         $produtos = [
             ["nome" => "Dusk Till Dawn", "preco" => "R$30,00", "Autor" => "Lia de Oliveira", "img" => "dtd.jpg"],
@@ -27,12 +27,12 @@
         <nav> 
         <ul class = "nav">
             <?php if(isset($usuario) && $usuario != ""){ ?>
-                <li class="nav-item">
-            <a href="" class="link-nav">Cursos</a>
-            </li>
-            <li class="nav-item">
-            <a href="" class="link-nav">Olá Usuario</a>
-            </li>
+                <li class="nav-item"> 
+                <a class = "nav-link" href=#> Cursos </a>
+                </li>
+                <li class="nav-item"> 
+                <a class = "nav-link" href=#> Olá <?php echo $usuario["nome"] ?> </a>
+                </li>
             <?php } else { ?>
 
 
@@ -48,37 +48,38 @@
         </nav>
  </header>
  <main>
-      <nav class="navbar bg-dark">
-      <ul class = "nav">
-      <?php foreach ($categorias as $categoria) { ?>
+    <nav class="navbar bg-dark">
+    <ul class = "nav">
+    <?php foreach ($categorias as $categoria) { ?>
                 <li class="nav-item">
                  <a href="" class="nav-link text-white"><?php echo $categoria; ?></a>
                 </li>
-      <?php } ?>
-      </ul>
-      </nav>
-
- <section class= "container">
-    <div class= "row justify-content-around">
-    <?php if(isset($produtos) && $produtos != []) { ?>
-
-    <?php foreach($produtos as $produto) { ?>
-        <div class = "col-lg-3 card text-center">
-        <h5> <?php echo $produto['nome']; ?> </h5>
-         <img src = "<?php echo $produto ['img'] ?>" class="card-img-top" alt="...">
-            <div class="card-body">
-                 <h6 class = "card - title"><?php echo $produto['preco']; ?> </h6>
-                          <a href="carrinho.php?nomeProduto=<?php echo $produto ['nome'] ?>"  class="btn btn-primary">BUY</a>
-            </div>
-        </div>
-        <!-- Fechando o php do foreach -->
     <?php } ?>
-    <!--fechando o if em! -->
-    <?php } else { ?>
-            <h1 class: class="text-danger"> Não tem livros nessa sessão :( </h1>
-            <?php } ?>
+    </ul>
+    </nav>
+    <section class = "container" >
+    <div class = "row">
+    <div class = "col-12">
+    <h1>Carrinho de compras</h1>
     </div>
- </section>
-
+    <div class = "col-12">
+    <div class = "row card">
+    <div class= "col-12">
+    <h3>Você está comprando o livro <?php echo $_GET [ 'nomeProduto']; ?> </h3>
+    </div>
+    <div class = "col-lg-6  col-md-6">
+    <form method= "post" action = "sucesso.php" class="d-flex flex-column p-3">
+    <input type="text" name="nomeCompleto" placeholder="Digite seu nome">
+    <input type="text" name="cpf" placeholder="Digite seu CPF">
+    <input type ="number" name = "cartão" placeholder= "Digite o número do cartão">
+    <input type= "date" name = "validarCartao" placeholder = "Digite a data de validade">
+    <input type = "password" name = "codigoCartao" placeholder = "Digite o CV.">
+    <button type="submit" class = "btn btn-success">Enviar</button>
+    </form>
+    </div>  
+    </div>
+    </div>
+    </div>
+</main>
 </body>
 </html>
