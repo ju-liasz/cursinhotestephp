@@ -1,6 +1,6 @@
 <?php 
         $nomeSistema = "Lia de Oliveira";
-        //$usuario = ["nome" => "Julia"];
+        $usuario = ["nome" => "Julia"];
 
         $produtos = [
             ["nome" => "Dusk Till Dawn", "preco" => "R$30,00", "Autor" => "Lia de Oliveira", "img" => "dtd.jpg"],
