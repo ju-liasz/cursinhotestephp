@@ -49,12 +49,12 @@
 
 $nomeImg = $_FILES [ "img"] ["name"]; 
 $localTmp = $_FILES ["img"] ["tmp_name"]; 
-$caminhoSalvo = 'img/' .$nomeImg; 
+$dataAtual = date ("d-m-y");
+$caminhoSalvo = 'img/' .$dataAtual.$nomeImg; 
 
 $deuCert = move_uploaded_file ($localTmp, $caminhoSalvo);
-exit;
 
-    echo cadastroProduto($_POST["nome"], $_POST["descricao"], $_POST["img"], $_POST["price"]);
+    echo cadastroProduto($_POST["nome"], $_POST["descricao"], $caminhoSalvo, $_POST["img"], $_POST["price"]);
    };
 ?>
 <?php 
