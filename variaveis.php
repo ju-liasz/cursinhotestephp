@@ -1,7 +1,8 @@
 <?php
 
-$nomeSistema = "Lia de Oliveira";
-$usuario = ["nome" => "Julia"];
+session_start (); 
+    $nomeSistema = "Lia de Oliveira";
+    $usuario = isset ($_SESSION['usuario'])? $_SESSION ['usuario']: "";
 
 $nomeArquivo = "produtos.json"; 
 $produtos = json_decode (file_get_contents ($nomeArquivo), true)
