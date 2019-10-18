@@ -1,4 +1,4 @@
-<?php require ("variaveis.php");
+<?php require ("config/variaveis.php");
 $usuario = ["email" => "julia@gmail.com","senha" => '$2y$10$pk3Ox7YvufqKVkVYvM80meLOfezqPy4AsKQ6pw4qInRfbNg55pMTS' ];
  
 if($_POST) {
@@ -9,7 +9,7 @@ if($_POST) {
 
         if(password_verify ($senha, $usuario ['senha'])) {
             session_start ();
-            $_SESSION ['usuario'] = ['nome' => 'vitor '];
+            $_SESSION ["nome"]= 'Julia';
             header ('Location: index.php');
 
         }else {

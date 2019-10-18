@@ -1,5 +1,5 @@
 <?php 
-   function cadastroProduto ($nome, $descricao, $img, $price) {
+   function cadastroProduto ($nome, $descricao, $img, $preco) {
        $nomeArquivo = "produtos.json";
        
        if(file_exists($nomeArquivo)){
@@ -10,7 +10,7 @@
             "nome" => $nome,
             "descricao"=> $descricao,
             "img"=> $img,
-            "price"=> $price,
+            "preco"=> $preco,
 
         ];
         $json = json_encode ($produtos); 
@@ -31,7 +31,7 @@
             "nome" => $nome,
             "descricao"=> $descricao,
             "img"=> $img,
-            "price"=> $price,
+            "preco"=> $preco,
 
         ];
         $json = json_encode ($produtos);
@@ -52,9 +52,9 @@ $localTmp = $_FILES ["img"] ["tmp_name"];
 $dataAtual = date ("d-m-y");
 $caminhoSalvo = 'img/' .$dataAtual.$nomeImg; 
 
-$deuCert = move_uploaded_file ($localTmp, $caminhoSalvo);
+$deuCerto = move_uploaded_file ($localTmp, $caminhoSalvo);
 
-    echo cadastroProduto($_POST["nome"], $_POST["descricao"], $caminhoSalvo, $_POST["img"], $_POST["price"]);
+    echo cadastroProduto($_POST["nome"], $_POST["descricao"], $caminhoSalvo, $_POST["preco"]);
    };
 ?>
 <?php 
@@ -172,8 +172,8 @@ $deuCert = move_uploaded_file ($localTmp, $caminhoSalvo);
          <input type="text" name="descricao" id="descricao" class="form-control" placeholder="Descrição do Produto" >
      </div>
      <div class="form-group">
-         <label for="price">Preço:</label>
-         <input type="text" name="price" id="price" class="form-control" placeholder="Preço do Produto">
+         <label for="preco">Preço:</label>
+         <input type="text" name="preco" id="preco" class="form-control" placeholder="Preço do Produto">
      </div>
      <div class="form-group">
          <label for="img">Foto do Produto:</label>

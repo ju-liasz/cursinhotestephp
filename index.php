@@ -1,12 +1,6 @@
 <?php 
-        $nomeSistema = "Lia de Oliveira";
-        $usuario = ["nome" => "Julia"];
+       require('config/variaveis.php');
 
-        $produtos = [
-            ["nome" => "Dusk Till Dawn", "preco" => "R$30,00", "Autor" => "Lia de Oliveira", "img" => "dtd.jpg"],
-            ["nome" => "Flutuante", "preco" => "R$20,00", "Autor" => "Lia de Oliveira", "img" => "flutuante.jpg"],
-        ];
-        $categorias = ["Livros", "Online", "Doe"]
 
 
         ?>
@@ -17,7 +11,7 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Lojinha</title>
+    <title><?php echo $nomeSistema ?></title>
 </head>
 <body>
     <header class = "navbar">
@@ -26,18 +20,20 @@
         </h1>
         <nav> 
         <ul class = "nav">
-            <?php if(isset($usuario) && $usuario != ""){ ?>
+            <?php if(isset($usuario) && $usuario != []){ ?>
                 <li class="nav-item">
             <a href="" class="link-nav">Cursos</a>
             </li>
             <li class="nav-item">
-            <a href="" class="link-nav">Olá Usuario</a>
+            <a href="" class="link-nav">Olá Usuario <?php echo $usuario ?></a>
             </li>
+            <li class = "nav-item">
+             <a href="sair.php" class = "nav-link"> Sair </a> </li>
             <?php } else { ?>
 
 
             <li class="nav-item"> 
-                <a class = "nav-link" href=#> Login </a>
+                <a class = "nav-link" href="login.php"> Login </a>
             </li>
             <li class="nav-item"> 
                 <a class = "nav-link" href=#> Cadastrar </a>
